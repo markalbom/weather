@@ -35,7 +35,7 @@ class App extends Component {
 
 //this function (on submit - see ZipForm) makes the call to the API, and then in its response, sets state to the designated keys (in this case, the keys that we defined in our constructor). Line 44: this.setState -- 'this' refers to the class 'App', and setState changes the state, and inputs the values that we assign from the API's response).
 //e in the parameter is for the event (in this case, when the zip code itself is submitted (in the Zip form), and e.prevent default is necessary because 'on submit' refreshes the page, and you lose state on refresh which sets it back to null).
-//dollar sign for string interprolation, using {this.state.selectedZipCode} because the zip code is in state, so it can change based on the the Input (handle Input Change)
+//use the dollar sign for string interprolation when inputing {this.state.selectedZipCode} because the zip code is in state, so it can change based on the the Input (handle Input Change).
   handleZipSubmit(e){
     e.preventDefault();
     axios.get(`http://api.openweathermap.org/data/2.5/weather?zip=${this.state.selectedZipCode},us&units=imperial&APPID=6285278ef3722a93bcb2f07b468e27fa`)
